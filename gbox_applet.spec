@@ -39,7 +39,7 @@ zestawienie informacji na trzy ró¿ne sposoby.
 
 %build
 rm -f missing acinclude.m4
-gettextize --copy --force
+%{__gettextize}
 %{__libtoolize}
 aclocal -I macros
 %{__autoconf}
