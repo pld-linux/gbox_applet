@@ -1,7 +1,7 @@
 Summary:	a mbox mail checker applet for gnome
 Name:		gbox_applet
 Version:	0.7.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Networking
 Group(de):	X11/Applikationen/Netzwerkwesen
