@@ -41,7 +41,7 @@ zestawienie informacji na trzy ró¿ne sposoby.
 rm -f missing acinclude.m4
 %{__gettextize}
 %{__libtoolize}
-aclocal -I macros
+%{__aclocal} -I macros
 %{__autoconf}
 %{__automake}
 %configure
