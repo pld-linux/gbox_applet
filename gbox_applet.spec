@@ -2,15 +2,18 @@ Summary:	A mbox mail checker applet for gnome
 Summary(pl):	Aplet GNOME sprawdzaj±cy skrzynkê pocztow±
 Name:		gbox_applet
 Version:	0.7.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		X11/Applications/Networking
 Group(de):	X11/Applikationen/Netzwerkwesen
 Group(pl):	X11/Aplikacje/Sieciowe
 Source0:	ftp://gbox-applet.sourceforge.net/pub/gbox-applet/%{name}-%{version}.tar.gz
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gdk-pixbuf-devel >= 0.7.0
 BuildRequires:	gnome-libs-devel
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -37,7 +40,12 @@ zestawienie informacji na trzy ró¿ne sposoby.
 %setup -q
 
 %build
+rm -f missing acinclude.m4
 gettextize --copy --force
+libtoolize --copy --force
+aclocal -I macros
+autoconf
+automake -a -c
 %configure
 %{__make}
 
