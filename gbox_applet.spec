@@ -5,8 +5,6 @@ Version:	0.7.0
 Release:	3
 License:	GPL
 Group:		X11/Applications/Networking
-Group(de):	X11/Applikationen/Netzwerkwesen
-Group(pl):	X11/Aplikacje/Sieciowe
 Source0:	ftp://gbox-applet.sourceforge.net/pub/gbox-applet/%{name}-%{version}.tar.gz
 BuildRequires:	autoconf
 BuildRequires:	automake
