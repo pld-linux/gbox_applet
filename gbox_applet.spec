@@ -1,4 +1,4 @@
-Summary:	A mbox mail checker applet for gnome
+Summary:	A mbox mail checker applet for GNOME
 Summary(pl):	Aplet GNOME sprawdzaj±cy skrzynkê pocztow±
 Name:		gbox_applet
 Version:	0.7.0
@@ -18,7 +18,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_sysconfdir	/etc/X11/GNOME
 
 %description
-A Gnome applet which monitors several mailbox files of type mbox. Each
+A GNOME applet which monitors several mailbox files of type mbox. Each
 mailbox can be assigned to a priority between 0 and 2 and it can have
 its own time interval for checking. For each priority there is a
 different icon. As additional Information Gbox can count the mails in
