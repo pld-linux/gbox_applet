@@ -1,20 +1,19 @@
-%define name	@PACKAGE@
-%define ver 	@VERSION@
-%define RELEASE 1
-%define rel 	%{?CUSTOM_RELEASE} %{!?CUSTOM_RELEASE:%RELEASE}
-%define prefix  /usr
+Summary:	a mbox mail checker applet for gnome
+Name:		gbox_applet
+Version:	0.6.1
+Release:	1
+License:	GPL
+Group:		X11/Applications/Networking
+Group(de):	X11/Applikationen/Netzwerkwesen
+Group(pl):	X11/Aplikacje/Sieciowe
+Source0:	ftp://gbox-applet.sourceforge.net/pub/gbox-applet/%{name}-%{version}.tar.gz
+BuildRequires:	gettext-devel
+BuildRequires:	gdk-pixbuf-devel >= 0.7.0
+BuildRequires:	gnome-libs-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-Summary: a mbox mail checker applet for gnome
-Name: %name
-Version: %ver
-Release: %rel
-Source: ftp://gbox-applet.sourceforge.net/pub/gbox-applet/gbox_applet-%{ver}.tar.gz
-Copyright: GPL
-Group: Applications/Internet
-BuildRoot: /var/tmp/%{name}-buildroot
-Prefix: %{_prefix}
-#Docdir: %{prefix}/doc
-
+%define		_prefix		/usr/X11R6
+%define		_sysconfdir	/etc/X11/GNOME
 
 %description
 A Gnome applet which monitors several mailbox files of type mbox. Each
@@ -26,33 +25,29 @@ applet's menu. A tooltip can shows a summary of the information in
 three different kinds.
 
 %prep
-%setup
+%setup -q
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%{_prefix} --localstatedir=/var/lib --sysconfdir=/etc
-make CFLAGS="$RPM_OPT_FLAGS"
+gettextize --copy --force
+%configure
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT%{_prefix}/share/pixmaps/gbox_applet
-mkdir -p $RPM_BUILD_ROOT%{_prefix}/share/applets/Network
-mkdir -p $RPM_BUILD_ROOT%{_prefix}/etc/CORBA/servers
-make DESTDIR=$RPM_BUILD_ROOT install
+
+%{__make} DESTDIR=$RPM_BUILD_ROOT install
+
+gzip -9nf AUTHORS ChangeLog NEWS README TODO
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
-%defattr(-,root,root)
-%doc ABOUT-NLS AUTHORS COPYING ChangeLog INSTALL NEWS README TODO 
-%{_prefix}/bin/gbox_applet
-%{_prefix}/share/pixmaps/gbox_applet/*
-%{_prefix}/share/applets/Network/gbox_applet.desktop
-/etc/CORBA/servers/gbox_applet.gnorba
-
-%changelog
-* Fri May 26 2000 Ian Campbell <ijc25@cam.ac.uk> 0.6.1-1
-- it works better with non-root builds and such like
-* Wed Feb 2 2000 Glenn Attwood <gattwood@home.com> 0.4.0-1
-- first rpm
-# end of file
+%files -f %{name}.lang
+%defattr(644,root,root,755)
+%doc *.gz
+%attr(755,root,root) %{_bindir}/gbox_applet
+%{_datadir}/applets/Network/gbox_applet.desktop
+%{_sysconfdir}/CORBA/servers/gbox_applet.gnorba
+%{_pixmapsdir}/*
