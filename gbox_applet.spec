@@ -51,9 +51,6 @@ rm -f missing acinclude.m4
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} DESTDIR=$RPM_BUILD_ROOT install
-
-gzip -9nf AUTHORS ChangeLog NEWS README TODO
-
 %find_lang %{name}
 
 %clean
@@ -61,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/gbox_applet
 %{_datadir}/applets/Network/gbox_applet.desktop
 %{_sysconfdir}/CORBA/servers/gbox_applet.gnorba
