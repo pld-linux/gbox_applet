@@ -7,12 +7,13 @@ License:	GPL
 Group:		X11/Applications/Networking
 Source0:	ftp://gbox-applet.sourceforge.net/pub/gbox-applet/%{name}-%{version}.tar.gz
 # Source0-md5:	3348efc5b64c39c0c04b29bf36b1ea8e
+URL:		http://gbox-applet.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
 BuildRequires:	gdk-pixbuf-devel >= 0.7.0
-BuildRequires:	gnome-libs-devel
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-core-devel
+BuildRequires:	gnome-libs-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
