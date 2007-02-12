@@ -1,5 +1,5 @@
 Summary:	A mbox mail checker applet for GNOME
-Summary(pl):	Aplet GNOME sprawdzaj±cy skrzynkê pocztow±
+Summary(pl.UTF-8):   Aplet GNOME sprawdzajÄ…cy skrzynkÄ™ pocztowÄ…
 Name:		gbox_applet
 Version:	0.7.0
 Release:	4
@@ -28,13 +28,13 @@ the boxes and show the subject and/or the sender of each mail in the
 applet's menu. A tooltip can show a summary of the information in
 three different kinds.
 
-%description -l pl
-To jest aplet GNOME kontroluj±cy skrzynki pocztowe typu mbox. Ka¿da
-skrzynka mo¿e mieæ przypisany priorytet od 0 do 2 i mieæ w³asny okres
-sprawdzania. Ka¿dy priorytet ma inn± ikonê. Jako dodatkow± informacjê
-Gbox mo¿e podawaæ liczbê listów w skrzynce i pokazywaæ temat lub
-nadawcê ka¿dego listu w menu apletu. Tooltip mo¿e pokazywaæ
-zestawienie informacji na trzy ró¿ne sposoby.
+%description -l pl.UTF-8
+To jest aplet GNOME kontrolujÄ…cy skrzynki pocztowe typu mbox. KaÅ¼da
+skrzynka moÅ¼e mieÄ‡ przypisany priorytet od 0 do 2 i mieÄ‡ wÅ‚asny okres
+sprawdzania. KaÅ¼dy priorytet ma innÄ… ikonÄ™. Jako dodatkowÄ… informacjÄ™
+Gbox moÅ¼e podawaÄ‡ liczbÄ™ listÃ³w w skrzynce i pokazywaÄ‡ temat lub
+nadawcÄ™ kaÅ¼dego listu w menu apletu. Tooltip moÅ¼e pokazywaÄ‡
+zestawienie informacji na trzy rÃ³Å¼ne sposoby.
 
 %prep
 %setup -q
