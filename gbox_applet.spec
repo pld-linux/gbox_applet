@@ -1,5 +1,5 @@
 Summary:	A mbox mail checker applet for GNOME
-Summary(pl.UTF-8):   Aplet GNOME sprawdzający skrzynkę pocztową
+Summary(pl.UTF-8):	Aplet GNOME sprawdzający skrzynkę pocztową
 Name:		gbox_applet
 Version:	0.7.0
 Release:	4
