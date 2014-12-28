@@ -11,7 +11,7 @@ URL:		http://gbox-applet.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gdk-pixbuf-devel >= 0.7.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-core-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	libtool
